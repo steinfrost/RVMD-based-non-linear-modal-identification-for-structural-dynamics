@@ -41,6 +41,17 @@ Nonlinearity includes:
 * Additive noise (controlled SNR)
 * Steady-state extraction
 
+
+<p align="center">
+  <a href="time_series.png">
+    <img src="time_series.png" width="650"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>Figure 1:</b> Visualization of the linear and non-linear 3dof system acceleration response.
+</p>
+
 ---
 
 ### Analysis Pipeline
@@ -55,12 +66,30 @@ Nonlinearity includes:
 
 ## Results
 
+### RVMD vs True and Backbone Frequencies
+
+| Mode | fₙ (Hz) | RVMD (Linear) | RVMD (Nonlinear) | Backbone | Errₙ (%) | Err_bb (%) |
+|------|--------|--------------|------------------|----------|----------|------------|
+| 1    | 3.168  | 3.192        | 3.195            | 3.182    | 0.87     | 0.40       |
+| 2    | 8.876  | 8.916        | 8.922            | 8.876    | 0.53     | 0.52       |
+| 3    | 12.826 | 12.910       | 12.914           | 12.826   | 0.69     | 0.69       |
+
+**Table:1** Comparison of true, RVMD-estimated, and backbone modal frequencies. RVMD estimates show <1% error and closely follow nonlinear backbone predictions
+
 ### Modal Identification
 RVMD accurately recovers modal frequencies for both linear and nonlinear systems with errors below **1%**.  
 Mode shapes show near-perfect agreement with analytical solutions (**MAC ≈ 1.0**), indicating high-fidelity decomposition.
 
-**Figure 1:** True vs RVMD modal frequencies  
-**Figure 2:** Mode shapes comparison (with MAC)  
+<p align="center">
+  <a href="frequency_comparison.png">
+    <img src="frequency_comparison.png" width="650"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>Figure 2:</b> Comparison of the results produce by RVMD with the base truth.
+</p>
+
 
 ---
 
@@ -68,16 +97,21 @@ Mode shapes show near-perfect agreement with analytical solutions (**MAC ≈ 1.0
 Under nonlinear conditions, RVMD maintains stable performance and captures **effective modal dynamics**.  
 Estimated frequencies align closely with **nonlinear backbone predictions** (error < 1%), demonstrating sensitivity to amplitude-dependent effects.
 
-**Figure 3:** PSD comparison (linear vs nonlinear)  
-**Figure 4:** Backbone curve (frequency vs amplitude)  
+<p align="center">
+  <a href="backbone_curves.png">
+    <img src="backbone_curves.png" width="650"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>Figure 3:</b> Frequency–amplitude backbone curves for the nonlinear system. RVMD-estimated modal frequencies follow the theoretical trend, capturing amplitude-dependent dynamics.
+</p>
 
 ---
 
 ### Noise Robustness
 RVMD remains stable under noise, with frequency errors typically below **1%** across varying SNR levels.  
 Modal estimates are smoother and less sensitive compared to raw signals.
-
-**Figure 5:** Frequency error vs SNR  
 
 ---
 
