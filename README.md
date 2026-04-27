@@ -24,7 +24,7 @@ These effects limit the applicability of classical modal analysis. This work eva
 
 A 3-DOF system governed by:
 
-M ẍ + C ẋ + K x + fₙₗ(x) = F(t)
+$M\ddot{x} + C\dot{x} + Kx + f_{nl}(x) = F(t)$
 
 Nonlinearity includes:
 
